@@ -11,6 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+app.get('/',(req,res) => {
+
+    res.sendStatus(200);
+
+})
+
 app.post('/createroom', (req,res) => {
 
     let id = req.body.id;

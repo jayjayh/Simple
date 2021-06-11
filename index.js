@@ -75,8 +75,8 @@ app.put('/chat', (req,res) =>{
 app.get('/get/:id', (req,res) => {
 
     client.lrange(req.params.id,0,-1,(err, reply) => {
-        if(reply == null)
-            res.sendStatus(404);
+        if(reply == "")
+            res.status(404).send("No Room with that ID");
         else
             res.status(200).send(reply);});
     

@@ -4,7 +4,22 @@ const redis = require('redis');
 const PORT = process.env.PORT || 8000;
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 
-const client = redis.createClient(REDIS_PORT);
+const client = redis.createClient({
+    host: 'ec2-54-211-74-15.compute-1.amazonaws.com',
+    port: 15310,
+    password:'p7aaeb38b4668151de0af4a60a15763edb1da6ebc51c573271ef24f2f4078b402',
+    tls: {
+        rejectUnauthorized: false
+    }
+});
+
+client.on('connect', () => {
+    console.log('Connected to redis');
+});
+
+client.on('error', err => {
+    console.log('Error ' + err);
+});
 
 const app = express();
 
@@ -15,7 +30,7 @@ app.get('/',(req,res) => {
 
     res.sendStatus(200);
 
-})
+});
 
 app.post('/createroom', (req,res) => {
 

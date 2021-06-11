@@ -4,8 +4,8 @@
   "description": "redis test",
   "main": "index.js",
   "scripts": {
-    "test": "test"
-    "start": "node index.js"
+    "test": "test",
+    "start": "nodeindex.js"
   },
   "repository": {
     "type": "git",

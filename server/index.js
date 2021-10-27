@@ -91,7 +91,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
 	cors:{
-		origin: "*:*",
+		origin: "ws://simplefornow.herokuapp.com:80",
 		methods:["GET","POST"]
 	},
 	

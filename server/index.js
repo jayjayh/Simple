@@ -97,9 +97,9 @@ const io = new Server(server, {
 	
 });
 
-
+const nsp = io.of("/socket");
 //listening for event
-io.on("connection",(socket)=>{
+nsp.on("connection",(socket)=>{
 	//console.log(socket.id);
 	socket.on("disconnect", ()=>{
 		console.log("user disconnect", socket.id);

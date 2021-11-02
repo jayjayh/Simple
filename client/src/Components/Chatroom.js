@@ -15,7 +15,7 @@ const Chat = ({ location }) => {
   const sendRef= useRef(null);
   useEffect(() => {
     const { username, id } = queryString.parse(location.search);
-	socket = io("ws://simplefornow.herokuapp.com/socket.io/?EIO=4&transport=websocket",{ transports : ['websocket'] });
+	socket = io("http://simplefornow.herokuapp.com/",{ transports : ['websocket'] });
     setRoom(id);
     setName(username);
 	socket.emit("join_room", id);

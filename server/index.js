@@ -1,6 +1,6 @@
 const express = require('express');
 //const redis = require('redis');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 80;
 //const REDIS_PORT = process.env.REDIS_PORT || 6379;
 const app = express();
 const http = require("http");
